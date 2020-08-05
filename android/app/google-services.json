@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "518469070654",
+    "firebase_url": "https://goaltrackingapp-8163c.firebaseio.com",
+    "project_id": "goaltrackingapp-8163c",
+    "storage_bucket": "goaltrackingapp-8163c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518469070654:android:e1b739b0857e35b52fc66f",
+        "android_client_info": {
+          "package_name": "com.goaltrackingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518469070654-nphidqtug9q735odfplo90a8ll1gj6rv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxouI2UR2Q49UmEDp5vze_gvMnAYKgYbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518469070654-nphidqtug9q735odfplo90a8ll1gj6rv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
