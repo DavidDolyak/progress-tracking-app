@@ -9,8 +9,9 @@ import GoalsScreen from './source/Screens/GoalsStack/GoalsScreen'
 import ProfileScreen from './source/Screens/ProfileStack/ProfileScreen'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import ButtonGroup from './source/Components/ButtonGroup';
 import Dashboard from './source/Components/Dashboard';
+import Datepicker from './source/Components/Datepicker';
+import ProjectCard from './source/Components/ProjectCard'
 
 const Tab = createBottomTabNavigator();
 
@@ -69,7 +70,7 @@ export default function App() {
           style: { height: 65, borderTopEndRadius: 35, borderTopStartRadius: 35, width: "100%", position: 'absolute' }
         }}>
 
-        <Tab.Screen name="Home" component={ButtonGroup} />
+        <Tab.Screen name="Home" component={Dashboard} />
         <Tab.Screen name="Schedule" component={ScheduleScreen} />
         <Tab.Screen name="Goals" component={GoalsScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
