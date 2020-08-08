@@ -10,24 +10,15 @@ export default function () {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <View style={{ flex: 2 }}>
-                    <Text style={{ fontSize: 32, color: 'white', fontWeight: 'bold' }}>00:22</Text>
+                <View style={styles.timeView}>
+                    <Text style={styles.timeText}>00:22</Text>
                 </View>
-                <View style={{ flex: 3, marginLeft: 6 }}>
-                    <Text style={{ fontSize: 14, fontWeight: "bold", color: 'white' }}>React Native</Text>
-                    <Text style={{ color: 'white' }}>Programming</Text>
+                <View style={styles.taskTextView}>
+                    <Text style={{ color: 'white' }}>React Native</Text>
+                    <Text style={{ color: '#E2E1E1' }}>Programming</Text>
                 </View>
-                <View style={{ flex: 1, alignItems: 'flex-end' }}>
-                    <TouchableOpacity style={{
-                        borderRadius: 10, flex: 1, alignSelf: 'stretch', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white', shadowColor: "#000",
-                        shadowOffset: {
-                            width: 8,
-                            height: 8,
-                        },
-                        shadowOpacity: 0.46,
-                        shadowRadius: 11.14,
-                        elevation: 25,
-                    }}>
+                <View style={styles.playButtonView}>
+                    <TouchableOpacity style={styles.button}>
                         <Icon name="play" size={width * 0.07}></Icon>
                     </TouchableOpacity>
                 </View>
@@ -48,9 +39,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 10,
         flexDirection: 'row',
-        // justifyContent: 'space-between',
-        paddingVertical: 10,
-        paddingHorizontal: 10,
+        padding: 10,
         backgroundColor: '#F58D8D',
         shadowColor: "#000",
         shadowOffset: {
@@ -59,8 +48,36 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.46,
         shadowRadius: 11.14,
-
         elevation: 17,
-
+    },
+    timeView: {
+        flex: 2,
+    },
+    timeText: {
+        fontSize: 32,
+        color: 'white',
+    },
+    taskTextView: {
+        flex: 3,
+        marginLeft: 6,
+    },
+    playButtonView: {
+        flex: 1,
+        alignItems: 'flex-end'
+    },
+    button: {
+        borderRadius: 10,
+        flex: 1, alignSelf: 'stretch',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 8,
+            height: 8,
+        },
+        shadowOpacity: 0.46,
+        shadowRadius: 11.14,
+        elevation: 25,
     }
 })

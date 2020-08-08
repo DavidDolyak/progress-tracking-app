@@ -1,20 +1,20 @@
 import * as React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
-export default function Header() {
+export default function Header(props) {
     return (
         <View style={styles.container}>
             <View style={styles.sideFunctions}>
                 <TouchableOpacity>
-                    <Text style={styles.sideText}>Left</Text>
+                    <Text style={styles.sideText}>{props.left}</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.titleContainer}>
-                <Text style={styles.titleText}>Title</Text>
+                <Text style={styles.titleText}>{props.title}</Text>
             </View>
             <View style={styles.sideFunctions}>
                 <TouchableOpacity>
-                    <Text style={styles.sideText}>Right</Text>
+                    <Text style={styles.sideText}>{props.right}</Text>
                 </TouchableOpacity>
             </View>
         </View >
@@ -23,27 +23,27 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         flexDirection: 'row',
         justifyContent: "space-between",
-        marginTop: 10,
+        backgroundColor: 'white',
+        // marginBottom: 10,
+        padding: 5,
     },
     titleContainer: {
         flex: 4,
         justifyContent: 'center',
+
     },
     titleText: {
         alignSelf: 'center',
         fontSize: 24,
-        fontFamily: 'Montserrat'
     },
     sideFunctions: {
         flex: 2,
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     sideText: {
         textAlign: 'center',
         fontSize: 18,
-        fontFamily: 'Montserrat'
     },
 })

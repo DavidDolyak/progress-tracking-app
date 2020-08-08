@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Dimensions } from "react-native";
 
-var width = Dimensions.get('window').width; //full width
+var width = Dimensions.get('window').width;
 
 export default function () {
     return (
@@ -15,7 +15,7 @@ export default function () {
                     </TouchableOpacity>
                 </View>
                 <View >
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.selectedPeriodBtn}>
                         <Text style={styles.buttonText}>Week</Text>
                     </TouchableOpacity>
                 </View>
@@ -27,7 +27,7 @@ export default function () {
             </View>
             <View style={styles.datepicker}>
                 <View>
-                    <TouchableOpacity style={styles.button1}>
+                    <TouchableOpacity style={styles.datepickerBtn}>
                         <Ionicons name="chevron-back-outline" style={styles.buttonText} size={24}></Ionicons>
                     </TouchableOpacity>
                 </View>
@@ -35,7 +35,7 @@ export default function () {
                     <Text>Date</Text>
                 </View>
                 <View>
-                    <TouchableOpacity style={styles.button1}>
+                    <TouchableOpacity style={styles.datepickerBtn}>
                         <Ionicons name="chevron-forward-outline" style={styles.buttonText} size={24}></Ionicons>
                     </TouchableOpacity>
                 </View>
@@ -46,7 +46,7 @@ export default function () {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         justifyContent: "center",
         alignItems: 'center',
     },
@@ -57,23 +57,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'white',
         borderRadius: 50,
-    },
-    button: {
-        padding: 10,
-        backgroundColor: '#3E3E3E',
-        borderRadius: 50,
         shadowColor: "#000",
         shadowOffset: {
-            width: 8,
+            width: 0,
             height: 8,
         },
         shadowOpacity: 0.46,
         shadowRadius: 11.14,
-        elevation: 25,
-        width: width * 0.3,
-        alignItems: 'center'
+        elevation: 17,
     },
-    button1: {
+    datepickerBtn: {
         padding: 10,
         backgroundColor: '#3E3E3E',
         borderRadius: 50,
@@ -86,6 +79,21 @@ const styles = StyleSheet.create({
         shadowRadius: 11.14,
         elevation: 25,
 
+    },
+    selectedPeriodBtn: {
+        padding: 10,
+        backgroundColor: '#3E3E3E',
+        borderRadius: 50,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 8,
+        },
+        shadowOpacity: 0.46,
+        shadowRadius: 11.14,
+        elevation: 17,
+        width: width * 0.3,
+        alignItems: 'center'
     },
     buttonText: {
         color: 'white',

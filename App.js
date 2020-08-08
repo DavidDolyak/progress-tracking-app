@@ -8,12 +8,20 @@ import ScheduleScreen from './source/Screens/ScheduleStack/ScheduleScreen'
 import GoalsScreen from './source/Screens/GoalsStack/GoalsScreen'
 import ProfileScreen from './source/Screens/ProfileStack/ProfileScreen'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { setCustomText } from 'react-native-global-props';
 
 import Dashboard from './source/Components/Dashboard';
 import Datepicker from './source/Components/Datepicker';
 import ProjectCard from './source/Components/ProjectCard'
 
 const Tab = createBottomTabNavigator();
+const customTextProps = {
+  style: {
+    fontFamily: 'Montserrat-Regular'
+  }
+}
+setCustomText(customTextProps)
+
 
 export default function App() {
   return (
@@ -70,7 +78,7 @@ export default function App() {
           style: { height: 65, borderTopEndRadius: 35, borderTopStartRadius: 35, width: "100%", position: 'absolute' }
         }}>
 
-        <Tab.Screen name="Home" component={Dashboard} />
+        <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Schedule" component={ScheduleScreen} />
         <Tab.Screen name="Goals" component={GoalsScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />

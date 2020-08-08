@@ -1,51 +1,87 @@
 import * as React from "react"
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Dimensions } from "react-native";
 
+var width = Dimensions.get('window').width; //full width
 
 export default function Dashboard() {
     return (
         <View style={styles.container}>
-            <View>
+            <View style={styles.leftSubContainer}>
                 <View>
-                    <Text style={{ fontSize: 48 }}>00:22</Text>
+                    <Text style={styles.timerText}>00:22</Text>
                 </View>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Icon name="briefcase-outline"></Icon>
-                    <Text>React-native front-end</Text>
+                <View style={styles.row}>
+                    <Icon name="briefcase-outline" ></Icon>
+                    <Text style={styles.taskText}>React-native front-end</Text>
                 </View>
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={styles.row}>
                     <Icon name="code-slash-outline"></Icon>
-                    <Text>React Native</Text>
+                    <Text style={styles.taskText}>React-native</Text>
                 </View>
             </View>
-            <View>
-                <View>
-                    <TouchableOpacity>
-                        <Text>New Task</Text>
+
+            <View style={styles.rightSubContainer}>
+                <View style={{ paddingVertical: 13 }}>
+                    <TouchableOpacity style={styles.addTaskButton}>
+                        <Text style={{ color: 'white', textAlign: 'center' }}>New Task</Text>
                     </TouchableOpacity>
                 </View>
-                <View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <View >
+                        <TouchableOpacity style={styles.button}>
+                            <Icon name="pause" style={{ color: 'white' }} size={18}></Icon>
+                        </TouchableOpacity>
+                    </View>
                     <View>
-                        <TouchableOpacity>
-
-                        </TouchableOpacity></View>
-                    <View>
-                        <TouchableOpacity>
-
+                        <TouchableOpacity style={styles.button}>
+                            <Icon name="stop" style={{ color: 'white' }} size={18}></Icon>
                         </TouchableOpacity>
                     </View>
                 </View>
             </View>
-        </View>
+        </View >
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#EAE9E9',
-        flexDirection: 'row'
+        backgroundColor: '#F3F3F3',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: width * 0.9,
+        alignSelf: 'center'
+    },
+    leftSubContainer: {
+        flex: 5,
+        alignSelf: 'center'
+    },
+    rightSubContainer: {
+        flex: 2.3,
+    },
+    timerText: {
+        fontSize: 48,
+        fontFamily: 'Montserrat-SemiBold',
+    },
+    row: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    taskText: {
+        paddingHorizontal: 5,
+    },
+    addTaskButton: {
+        borderRadius: 10,
+        backgroundColor: '#FF5C5C',
+        paddingVertical: 11,
+        paddingHorizontal: 15,
+    },
+    button: {
+        borderRadius: 10,
+        backgroundColor: '#3D3D3D',
+        padding: 12,
     },
 
 }
