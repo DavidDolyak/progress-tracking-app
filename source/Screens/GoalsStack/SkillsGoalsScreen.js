@@ -8,7 +8,7 @@ class GoalsScreen extends React.Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Header title={'Skills goals'} right={"Edit"} />
+                <Header title={'Skills goals'} right={<Text>{"Edit"}</Text>} />
                 <View style={{ margin: 15 }}>
                     <Datepicker style={{ flex: 1 }} />
                 </View >
@@ -18,8 +18,8 @@ class GoalsScreen extends React.Component {
                     <GoalCard />
                 </View>
                 <View style={{ flex: 0.025, marginBottom: 85, flexDirection: 'row', alignSelf: 'center' }}>
-                    <View style={{ flex: 0.01, borderRadius: 50, borderWidth: 2, marginRight: 2, backgroundColor: 'black' }}></View>
-                    <View style={{ flex: 0.01, borderRadius: 50, borderWidth: 2, }}></View>
+                    <View style={{ flex: 0.01, borderRadius: 50, borderWidth: 2, marginRight: 2 }}></View>
+                    <View style={{ flex: 0.01, borderRadius: 50, borderWidth: 2, backgroundColor: 'black' }}></View>
                 </View>
             </View >
         );

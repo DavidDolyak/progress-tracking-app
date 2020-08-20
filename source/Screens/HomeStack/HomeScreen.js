@@ -13,7 +13,7 @@ class HomeScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={{ flex: 1, marginBottom: 20 }}>
-                    <Header right={"Edit"} title={"Tasks"} />
+                    <Header right={<Text style={styles.sideText}>{"Edit"}</Text>} title={"Tasks"} />
                 </View>
                 <View style={{ flex: 1, marginBottom: 10 }} >
                     <Datepicker />
@@ -45,8 +45,10 @@ const styles = StyleSheet.create({
         flex: 4,
         paddingVertical: 10,
         marginTop: 30
-
-
+    },
+    sideText: {
+        textAlign: 'center',
+        fontSize: 18,
     },
     dashboards: {
         backgroundColor: '#F3F3F3',
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
         shadowRadius: 11.14,
         elevation: 17,
         // justifyContent: 'flex-start
-    }
+    },
 }
 )
 

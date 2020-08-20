@@ -6,7 +6,9 @@ export default function Header(props) {
         <View style={styles.container}>
             <View style={styles.sideFunctions}>
                 <TouchableOpacity>
-                    <Text style={styles.sideText}>{props.left}</Text>
+                    <View style={styles.leftSide}>
+                        {props.left}
+                    </View>
                 </TouchableOpacity>
             </View>
             <View style={styles.titleContainer}>
@@ -14,7 +16,9 @@ export default function Header(props) {
             </View>
             <View style={styles.sideFunctions}>
                 <TouchableOpacity>
-                    <Text style={styles.sideText}>{props.right}</Text>
+                    <View style={styles.leftSide}>
+                        {props.right}
+                    </View>
                 </TouchableOpacity>
             </View>
         </View >
@@ -42,8 +46,9 @@ const styles = StyleSheet.create({
         flex: 2,
         justifyContent: 'center',
     },
-    sideText: {
-        textAlign: 'center',
-        fontSize: 18,
+    leftSide:
+    {
+        alignSelf: 'center',
+        justifyContent: 'center',
     },
 })

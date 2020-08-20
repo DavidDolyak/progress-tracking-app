@@ -3,9 +3,11 @@ import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack'
 import HomeScreen from './source/Screens/HomeStack/HomeScreen'
 import ScheduleScreen from './source/Screens/ScheduleStack/ScheduleScreen'
-import GoalsScreen from './source/Screens/GoalsStack/GoalsScreen'
+import SkillsGoalsScreen from './source/Screens/GoalsStack/SkillsGoalsScreen'
+import ProjectGoalsScreen from './source/Screens/GoalsStack/ProjectsGoalsScreen'
 import ProfileScreen from './source/Screens/ProfileStack/ProfileScreen'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { setCustomText } from 'react-native-global-props';
@@ -15,12 +17,27 @@ import Datepicker from './source/Components/Datepicker';
 import ProjectCard from './source/Components/ProjectCard'
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 const customTextProps = {
   style: {
     fontFamily: 'Montserrat-Regular'
   }
 }
 setCustomText(customTextProps)
+
+const goalStack = () => {
+  return (
+    <Stack.Navigator
+      headerMode='none'
+      screenOptions={{
+        gestureEnabled: 'true',
+        gestureDirection: 'vertical'
+      }}>
+      <Stack.Screen name='Projects' component={ProjectGoalsScreen} />
+      <Stack.Screen name='Skills' component={SkillsGoalsScreen} />
+    </Stack.Navigator>
+  )
+}
 
 
 export default function App() {
@@ -80,7 +97,7 @@ export default function App() {
 
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Schedule" component={ScheduleScreen} />
-        <Tab.Screen name="Goals" component={GoalsScreen} />
+        <Tab.Screen name="Goals" component={goalStack} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer >
