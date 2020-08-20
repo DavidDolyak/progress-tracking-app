@@ -10,11 +10,34 @@ const ScheduleAgenda: React.FC = () => {
 
     const renderItem = (item) => {
         return (
-            <TouchableOpacity>
-                <Card style={{ marginVertical: 10, alignItems: 'center', justifyContent: 'center' }}>
+            <TouchableOpacity style={{
+                borderColor: 'white'
+            }}>
+                <Card style={{
+                    backgroundColor: '#F58D8D',
+                    marginVertical: 10,
+                    // alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 10,
+                    borderColor: 'white',
+                    shadowOffset: {
+                        width: 8,
+                        height: 1,
+                    },
+                    shadowOpacity: 0.46,
+                    shadowRadius: 11.14,
+                    elevation: 15,
+                }}>
                     <Card.Content>
-                        <View style={{ padding: 25 }}>
-                            <Text>{item.name}</Text>
+                        <View style={{ paddingVertical: 10, flexDirection: 'row', justifyContent: 'space-between' }}>
+                            <View>
+                                <Text style={{ color: 'black' }}>{item.description}</Text>
+                                <Text style={{ color: 'white' }}>{item.name}</Text>
+                            </View>
+                            <View style={{ alignItems: 'flex-end' }}>
+                                <Text style={{ color: 'red', fontWeight: "bold" }}>{item.preparation}</Text>
+                                <Text style={{ color: 'black' }}>{item.category}</Text>
+                            </View>
                         </View>
                     </Card.Content>
                 </Card>
@@ -38,7 +61,10 @@ const ScheduleAgenda: React.FC = () => {
                     const numItems = Math.floor(Math.random() * 3 + 1);
                     for (let j = 0; j < numItems; j++) {
                         items[strTime].push({
-                            name: 'Item for ' + strTime + ' #' + j,
+                            name: strTime + ' #' + j,
+                            description: 'Description',
+                            category: 'school',
+                            preparation: 'medium',
                             height: Math.max(50, Math.floor(Math.random() * 150))
                         });
                     }
@@ -52,7 +78,7 @@ const ScheduleAgenda: React.FC = () => {
     }
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 0.9 }}>
             <Agenda
                 // testID={testIDs.agenda.CONTAINER}
                 items={items}
@@ -73,7 +99,19 @@ const ScheduleAgenda: React.FC = () => {
                 //    '2017-05-25': {color: 'gray'},
                 //    '2017-05-26': {endingDay: true, color: 'gray'}}}
                 // monthFormat={'yyyy'}
-                theme={{ calendarBackground: 'white', agendaKnobColor: '#3D3D3D' }}
+                theme={{
+                    calendarBackground: 'white',
+                    agendaKnobColor: '#3D3D3D',
+                    backgroundColor: '#EAE9E9',
+                    selectedDotColor: 'transparent',
+                    // dotColor: '#3D3D3D',#3D3D3D
+                    selectedDayBackgroundColor: '#3D3D3D',
+                    dotColor: "transparent",
+                    dayTextColor: 'black',
+                    agendaDayTextColor: 'black',
+                    agendaDayNumColor: 'black',
+
+                }}
             //renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
             // hideExtraDays={false}
             />
